@@ -6,19 +6,11 @@ exports_files([
 
 filegroup(
     name = "node_modules",
-    srcs = glob(["/".join([
-        "node_modules",
-        pkg,
-        "**",
-        ext,
-    ]) for pkg in [
-        "react",
-        "react-dom",
-        "@types",
-        "typescript"
-    ] for ext in [
-        "*.js",
-        "*.json",
-        "*.d.ts",
-    ]]),
+    srcs = glob([
+        "node_modules/typescript/**",
+        "node_modules/lite-server/**",
+        "node_modules/@types/**",
+        "node_modules/react/**",
+        "node_modules/react-dom/**",
+    ]),
 )

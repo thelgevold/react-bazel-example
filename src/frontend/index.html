@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <main id="root"></main>
+
+    <script src="/bundle.min.js"></script>
+    <script>
+        require.config({paths: {'react-dom': 'react-dom.development'}});
+        require.config({paths: {'react': 'react.development'}});
+        require(['react_samples/src/frontend/main']);
+    </script>
+  </body>
+</html>

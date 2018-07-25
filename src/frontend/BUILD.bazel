@@ -4,10 +4,14 @@ load("@build_bazel_rules_typescript//:defs.bzl", "ts_library")
 
 ts_library(
     name = "src",
-    srcs = ["app.tsx"],
-    tsconfig = "//:tsconfig.json"
+    srcs = ["main.tsx", "app.tsx"],
+    tsconfig = "//:tsconfig.json",
+    deps = [
+       "//src/model",
+       "//src/frontend/friend:src"
+    ]
 )
-
+ 
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
 
 ts_devserver(
@@ -16,9 +20,9 @@ ts_devserver(
         "react_samples/node_modules/react/umd",
         "react_samples/node_modules/react-dom/umd",
     ],
-    port = 4000,
-    entry_module = "react_samples/src/app",
+    port = 9999,
     serving_path = "/bundle.min.js",
+    #entry_module = "react_samples/src/frontend/main",
     deps = [":src"],
     static_files = [
         ":index.html",
