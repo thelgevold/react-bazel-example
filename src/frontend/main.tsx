@@ -1,5 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {FriendsList} from './app';
+import {AppComponent} from './app';
 
-ReactDOM.render(<FriendsList />, document.getElementById('root'));
+ReactDOM.render(<AppComponent />, document.getElementById('root'));
