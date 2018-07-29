@@ -11,6 +11,23 @@ ts_library(
        "//src/frontend/module20:src",
        "//src/frontend/module19:src",
        "//src/frontend/module18:src",
+       "//src/frontend/module17:src",
+       "//src/frontend/module16:src",
+       "//src/frontend/module15:src",
+       "//src/frontend/module14:src",
+       "//src/frontend/module13:src",
+       "//src/frontend/module12:src",
+       "//src/frontend/module11:src",
+       "//src/frontend/module10:src",
+       "//src/frontend/module9:src",
+       "//src/frontend/module8:src",
+       "//src/frontend/module7:src",
+       "//src/frontend/module6:src",
+       "//src/frontend/module5:src",
+       "//src/frontend/module4:src",
+       "//src/frontend/module3:src",
+       "//src/frontend/module2:src",
+       "//src/frontend/module1:src",
        
     ]
 )
