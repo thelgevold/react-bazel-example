@@ -9,6 +9,7 @@ ts_library(
     deps = [
        "//src/model",
        "//src/frontend/module20:src",
+       "//src/frontend/module19:src",
        
     ]
 )

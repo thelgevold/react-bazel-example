@@ -1,0 +1,51 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@build_bazel_rules_typescript//:defs.bzl", "ts_library")
+
+ts_library(
+    name = "src",
+    srcs = ["mod.tsx"],
+    deps = [
+        "//src/frontend/module19/mod1/friends:src",
+        "//src/frontend/module19/mod2/friends:src",
+        "//src/frontend/module19/mod3/friends:src",
+        "//src/frontend/module19/mod4/friends:src",
+        "//src/frontend/module19/mod5/friends:src",
+        "//src/frontend/module19/mod6/friends:src",
+        "//src/frontend/module19/mod7/friends:src",
+        "//src/frontend/module19/mod8/friends:src",
+        "//src/frontend/module19/mod9/friends:src",
+        "//src/frontend/module19/mod10/friends:src",
+        "//src/frontend/module19/mod11/friends:src",
+        "//src/frontend/module19/mod12/friends:src",
+        "//src/frontend/module19/mod13/friends:src",
+        "//src/frontend/module19/mod14/friends:src",
+        "//src/frontend/module19/mod15/friends:src",
+        "//src/frontend/module19/mod16/friends:src",
+        "//src/frontend/module19/mod17/friends:src",
+        "//src/frontend/module19/mod18/friends:src",
+        "//src/frontend/module19/mod19/friends:src",
+        "//src/frontend/module19/mod20/friends:src",
+        "//src/frontend/module19/mod21/friends:src",
+        "//src/frontend/module19/mod22/friends:src",
+        "//src/frontend/module19/mod23/friends:src",
+        "//src/frontend/module19/mod24/friends:src",
+        "//src/frontend/module19/mod25/friends:src",
+        "//src/frontend/module19/mod26/friends:src",
+        "//src/frontend/module19/mod27/friends:src",
+        "//src/frontend/module19/mod28/friends:src",
+        "//src/frontend/module19/mod29/friends:src",
+        "//src/frontend/module19/mod30/friends:src",
+        "//src/frontend/module19/mod31/friends:src",
+        "//src/frontend/module19/mod32/friends:src",
+        "//src/frontend/module19/mod33/friends:src",
+        "//src/frontend/module19/mod34/friends:src",
+        "//src/frontend/module19/mod35/friends:src",
+        "//src/frontend/module19/mod36/friends:src",
+        "//src/frontend/module19/mod37/friends:src",
+        "//src/frontend/module19/mod38/friends:src",
+        "//src/frontend/module19/mod39/friends:src",
+        "//src/frontend/module19/mod40/friends:src",
+        "//src/model"
+    ]
+)

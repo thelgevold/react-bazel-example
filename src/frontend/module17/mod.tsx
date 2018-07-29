@@ -41,6 +41,7 @@ import {FriendsList38Component} from './mod38/friends/friends';
 import {FriendsList39Component} from './mod39/friends/friends';
 import {FriendsList40Component} from './mod40/friends/friends';
 
+import {IFriends} from '../../model';
 
 export class ModComponent17 extends React.Component<IFriends, IFriends> {
   
