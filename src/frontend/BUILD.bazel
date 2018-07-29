@@ -8,26 +8,8 @@ ts_library(
     tsconfig = "//:tsconfig.json",
     deps = [
        "//src/model",
-       "//src/frontend/mod1/friends:src",
-       "//src/frontend/mod2/friends:src",
-       "//src/frontend/mod3/friends:src",
-       "//src/frontend/mod4/friends:src",
-       "//src/frontend/mod5/friends:src",
-       "//src/frontend/mod6/friends:src",
-       "//src/frontend/mod7/friends:src",
-       "//src/frontend/mod8/friends:src",
-       "//src/frontend/mod9/friends:src",
-       "//src/frontend/mod10/friends:src",
-       "//src/frontend/mod11/friends:src",
-       "//src/frontend/mod12/friends:src",
-       "//src/frontend/mod13/friends:src",
-       "//src/frontend/mod14/friends:src",
-       "//src/frontend/mod15/friends:src",
-       "//src/frontend/mod16/friends:src",
-       "//src/frontend/mod17/friends:src",
-       "//src/frontend/mod18/friends:src",
-       "//src/frontend/mod19/friends:src",
-       "//src/frontend/mod20/friends:src"
+       "//src/frontend/module20:src",
+       
     ]
 )
  

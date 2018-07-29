@@ -1,51 +1,50 @@
 import * as React from 'react';
-import {FriendsList1Component} from './mod1/friends/friends';
-import {FriendsList2Component} from './mod2/friends/friends';
-import {FriendsList3Component} from './mod3/friends/friends';
-import {FriendsList4Component} from './mod4/friends/friends';
-import {FriendsList5Component} from './mod5/friends/friends';
-import {FriendsList6Component} from './mod6/friends/friends';
-import {FriendsList7Component} from './mod7/friends/friends';
-import {FriendsList8Component} from './mod8/friends/friends';
-import {FriendsList9Component} from './mod9/friends/friends';
-import {FriendsList10Component} from './mod10/friends/friends';
-import {FriendsList11Component} from './mod11/friends/friends';
-import {FriendsList12Component} from './mod12/friends/friends';
-import {FriendsList13Component} from './mod13/friends/friends';
-import {FriendsList14Component} from './mod14/friends/friends';
-import {FriendsList15Component} from './mod15/friends/friends';
-import {FriendsList16Component} from './mod16/friends/friends';
-import {FriendsList17Component} from './mod17/friends/friends';
-import {FriendsList18Component} from './mod18/friends/friends';
-import {FriendsList19Component} from './mod19/friends/friends';
-import {FriendsList20Component} from './mod20/friends/friends';
 
-
-export class AppComponent extends React.Component {
+// import {ModComponent1} from './module1/mod';
+// import {ModComponent2} from './module2/mod';
+// import {ModComponent3} from './module3/mod';
+// import {ModComponent4} from './module4/mod';
+// import {ModComponent5} from './module5/mod';
+// import {ModComponent6} from './module6/mod';
+// import {ModComponent7} from './module7/mod';
+// import {ModComponent8} from './module8/mod';
+// import {ModComponent9} from './module9/mod';
+// import {ModComponent10} from './module10/mod';
+// import {ModComponent11} from './module11/mod';
+// import {ModComponent12} from './module12/mod';
+// import {ModComponent13} from './module13/mod';
+// import {ModComponent14} from './module14/mod';
+// import {ModComponent15} from './module15/mod';
+// import {ModComponent16} from './module16/mod';
+// import {ModComponent17} from './module17/mod';
+// import {ModComponent18} from './module18/mod';
+// import {ModComponent19} from './module19/mod';
+import {ModComponent20} from './module20/mod';
+export class AppComponent extends React.Component<IFriends, IFriends> {
   
-  render() {
+  render(): any {
     return (
       <div>
-        <FriendsList1Component></FriendsList1Component>
-        <FriendsList2Component></FriendsList2Component>
-        <FriendsList3Component></FriendsList3Component>
-        <FriendsList4Component></FriendsList4Component>
-        <FriendsList5Component></FriendsList5Component>
-        <FriendsList6Component></FriendsList6Component>
-        <FriendsList7Component></FriendsList7Component>
-        <FriendsList8Component></FriendsList8Component>
-        <FriendsList9Component></FriendsList9Component>
-        <FriendsList10Component></FriendsList10Component>
-        <FriendsList11Component></FriendsList11Component>
-        <FriendsList12Component></FriendsList12Component>
-        <FriendsList13Component></FriendsList13Component>
-        <FriendsList14Component></FriendsList14Component>
-        <FriendsList15Component></FriendsList15Component>
-        <FriendsList16Component></FriendsList16Component>
-        <FriendsList17Component></FriendsList17Component>
-        <FriendsList18Component></FriendsList18Component>
-        <FriendsList19Component></FriendsList19Component>
-        <FriendsList20Component></FriendsList20Component>
+        {/* <ModComponent1></ModComponent1>
+        <ModComponent2></ModComponent2>
+        <ModComponent3></ModComponent3>
+        <ModComponent4></ModComponent4>
+        <ModComponent5></ModComponent5>
+        <ModComponent6></ModComponent6>
+        <ModComponent7></ModComponent7>
+        <ModComponent8></ModComponent8>
+        <ModComponent9></ModComponent9>
+        <ModComponent10></ModComponent10>
+        <ModComponent11></ModComponent11>
+        <ModComponent12></ModComponent12>
+        <ModComponent13></ModComponent13>
+        <ModComponent14></ModComponent14>
+        <ModComponent15></ModComponent15>
+        <ModComponent16></ModComponent16>
+        <ModComponent17></ModComponent17>
+        <ModComponent18></ModComponent18>
+        <ModComponent19></ModComponent19> */}
+        <ModComponent20></ModComponent20>
       </div>
     ); 
   }
