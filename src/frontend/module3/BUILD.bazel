@@ -46,5 +46,6 @@ ts_library(
         "//src/frontend/module3/mod38/friends:src",
         "//src/frontend/module3/mod39/friends:src",
         "//src/frontend/module3/mod40/friends:src",
+        "//src/model"
     ]
 )

@@ -10,6 +10,7 @@ ts_library(
        "//src/model",
        "//src/frontend/module20:src",
        "//src/frontend/module19:src",
+       "//src/frontend/module18:src",
        
     ]
 )

@@ -17,7 +17,7 @@ import * as React from 'react';
 // import {ModComponent15} from './module15/mod';
 // import {ModComponent16} from './module16/mod';
 // import {ModComponent17} from './module17/mod';
-// import {ModComponent18} from './module18/mod';
+import {ModComponent18} from './module18/mod';
 import {ModComponent19} from './module19/mod';
 import {ModComponent20} from './module20/mod';
 import {IFriends} from '../model';
@@ -43,8 +43,8 @@ export class AppComponent extends React.Component<IFriends, IFriends> {
         <ModComponent15></ModComponent15>
         <ModComponent16></ModComponent16>
         <ModComponent17></ModComponent17>
+         */}
         <ModComponent18></ModComponent18>
-        <ModComponent19></ModComponent19> */}
         <ModComponent19></ModComponent19>
         <ModComponent20></ModComponent20>
       </div>
