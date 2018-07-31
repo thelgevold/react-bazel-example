@@ -1,0 +1,15 @@
+version: "3.5"
+networks:
+  caching_angular-samples:
+    external: true
+
+services:
+  app:
+    networks:
+      - caching_angular-samples
+    build: .
+    volumes:
+      - ./src:/usr/src
+    ports:
+      - "9999:9999"
+      - "35729:35729"

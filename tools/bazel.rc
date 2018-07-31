@@ -1,1 +1,4 @@
+build --remote_http_cache=http://cache:9001/cache --experimental_strict_action_env
+run --remote_http_cache=http://cache:9001/cache --experimental_strict_action_env
+
 build --symlink_prefix=dist/
