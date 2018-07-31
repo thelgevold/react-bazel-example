@@ -19,7 +19,7 @@
     
     "start": "npm run build-frontend && npm run build-backend && concurrently \"npm run start-frontend\" \"npm run start-backend\"",
 
-    "start-app": "docker-compose -f docker-compose-base.yml -f docker-compose-app0.yml up --build",
+    "start-app": "docker-compose -f docker-compose-base.yml -f docker-compose-app0.yml up",
     "stop-app": "docker-compose -f docker-compose-base.yml -f docker-compose-app.yml down",
 
     "start-remote-cache": "docker-compose -f caching/docker-compose.yml up",
