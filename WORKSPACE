@@ -2,18 +2,32 @@ workspace(name = "react_samples")
 
 http_archive(
     name = "build_bazel_rules_nodejs",
-    url = "https://github.com/bazelbuild/rules_nodejs/archive/0.9.1.zip",
-    strip_prefix = "rules_nodejs-0.9.1",
-    sha256 = "6139762b62b37c1fd171d7f22aa39566cb7dc2916f0f801d505a9aaf118c117f",
+    urls = ["https://github.com/bazelbuild/rules_nodejs/archive/0.11.3.zip"],
+    strip_prefix = "rules_nodejs-0.11.3",
+    sha256 = "e8842fa5f5e38f2c826167ff94323d4b5aabd13217cee867d971d6f860cfd730"
 )
 
-# The Bazel buildtools repo contains tools like the BUILD file formatter, buildifier
+http_archive(
+    name = "bazel_skylib",
+    urls = ["https://github.com/bazelbuild/bazel-skylib/archive/0.3.1.zip"],
+    strip_prefix = "bazel-skylib-0.3.1",
+    sha256 = "95518adafc9a2b656667bbf517a952e54ce7f350779d0dd95133db4eb5c27fb1",
+)
+
+http_archive(
+    name = "io_bazel_rules_webtesting",
+    url = "https://github.com/bazelbuild/rules_webtesting/archive/0.2.1.zip",
+    strip_prefix = "rules_webtesting-0.2.1",
+    sha256 = "7d490aadff9b5262e5251fa69427ab2ffd1548422467cb9f9e1d110e2c36f0fa",
+)
+
+BAZEL_BUILDTOOLS_VERSION = "82b21607e00913b16fe1c51bec80232d9d6de31c"
+
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    # Note, this commit matches the version of buildifier in angular/ngcontainer
-    url = "https://github.com/bazelbuild/buildtools/archive/b3b620e8bcff18ed3378cd3f35ebeb7016d71f71.zip",
-    strip_prefix = "buildtools-b3b620e8bcff18ed3378cd3f35ebeb7016d71f71",
-    sha256 = "dad19224258ed67cbdbae9b7befb785c3b966e5a33b04b3ce58ddb7824b97d73",
+    url = "https://github.com/bazelbuild/buildtools/archive/%s.zip" % BAZEL_BUILDTOOLS_VERSION,
+    strip_prefix = "buildtools-%s" % BAZEL_BUILDTOOLS_VERSION,
+    sha256 = "edb24c2f9c55b10a820ec74db0564415c0cf553fa55e9fc709a6332fb6685eff",
 )
 
 # Runs the TypeScript compiler
@@ -24,19 +38,16 @@ http_archive(
     sha256 = "1aa75917330b820cb239b3c10a936a10f0a46fe215063d4492dd76dc6e1616f4",
 )
 
-# Used by the ts_web_test_suite rule to provision browsers
-http_archive(
-    name = "io_bazel_rules_webtesting",
-    url = "https://github.com/bazelbuild/rules_webtesting/archive/v0.2.0.zip",
-    strip_prefix = "rules_webtesting-0.2.0",
-    sha256 = "cecc12f07e95740750a40d38e8b14b76fefa1551bef9332cb432d564d693723c",
+local_repository(
+    name = "build_bazel_rules_typescript",
+    path = "node_modules/@bazel/typescript",
 )
 
 # Some of the TypeScript tooling is written in Go.
 http_archive(
     name = "io_bazel_rules_go",
-    url = "https://github.com/bazelbuild/rules_go/releases/download/0.11.0/rules_go-0.11.0.tar.gz",
-    sha256 = "f70c35a8c779bb92f7521ecb5a1c6604e9c3edd431e50b6376d7497abc8ad3c1",
+    url = "https://github.com/bazelbuild/rules_go/releases/download/0.14.0/rules_go-0.14.0.tar.gz",
+    sha256 = "5756a4ad75b3703eb68249d50e23f5d64eaf1593e886b9aa931aa6e938c4e301",
 )
 
 http_archive(
@@ -78,7 +89,6 @@ load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_too
 go_rules_dependencies()
 go_register_toolchains()
 
-load("@io_bazel_rules_webtesting//web:repositories.bzl", "browser_repositories", "web_test_repositories")
 
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_setup_workspace")
 

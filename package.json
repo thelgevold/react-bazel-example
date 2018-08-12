@@ -5,9 +5,10 @@
   },
   "devDependencies": {
     "@bazel/ibazel": "0.4.0",
+    "@bazel/typescript": "0.16.0",
     "@types/react": "16.4.1",
     "@types/react-dom": "16.0.6",
-    "typescript": "2.7.2",
+    "typescript": "2.9.1",
     "concurrently": "3.5.1"
   },
   "scripts": {
@@ -18,9 +19,6 @@
     "build-frontend": "bazel build //src/frontend:devserver",
     
     "start": "npm run build-frontend && npm run build-backend && concurrently \"npm run start-frontend\" \"npm run start-backend\"",
-
-    "start-app": "docker-compose -f docker-compose-base.yml -f docker-compose-app.yml up",
-    "stop-app": "docker-compose -f docker-compose-base.yml -f docker-compose-app.yml down",
 
     "start-remote-cache": "docker-compose -f caching/docker-compose.yml up",
     "stop-remote-cache": "docker-compose -f caching/docker-compose.yml down"

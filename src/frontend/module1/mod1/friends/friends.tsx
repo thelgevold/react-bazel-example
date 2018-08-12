@@ -40,7 +40,7 @@ export class FriendsList1Component extends React.Component<IFriends, IFriends> {
 
     return (
       <div>
-        <h1>List of Friends!</h1>
+        <h1>List of Friends! changed jj</h1>
         {friends}
       </div>
     ); 
