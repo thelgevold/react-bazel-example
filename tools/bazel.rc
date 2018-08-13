@@ -1,4 +1,4 @@
-build --spawn_strategy=remote --genrule_strategy=remote --strategy=TypeScriptCompile=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=new-host:8980
-run --spawn_strategy=remote --genrule_strategy=remote --strategy=TypeScriptCompile=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=Torgeirs-MBP:8980
+build --spawn_strategy=remote --genrule_strategy=remote --strategy=TypeScriptCompile=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=localhost:8980
+run --spawn_strategy=remote --genrule_strategy=remote --strategy=TypeScriptCompile=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=localhost:8980
 
 build --symlink_prefix=dist/
