@@ -1,4 +1,4 @@
-build --spawn_strategy=remote --genrule_strategy=remote --strategy=TypeScriptCompile=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=localhost:8980
-run --spawn_strategy=remote --genrule_strategy=remote --strategy=TypeScriptCompile=remote --strategy=Javac=remote --strategy=Closure=remote  --remote_executor=localhost:8980
+build --strategy=TypeScriptCompile=worker --remote_http_cache=http://localhost:9001/cache
+run --strategy=TypeScriptCompile=worker --remote_http_cache=http://localhost:9001/cache
 
 build --symlink_prefix=dist/
