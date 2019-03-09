@@ -1,0 +1,5 @@
+build --strategy=TypeScriptCompile=worker
+
+build --symlink_prefix=dist/
+
+run --nolegacy_external_runfiles

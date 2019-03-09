@@ -3,14 +3,3 @@ package(default_visibility = ["//visibility:public"])
 exports_files([
   "tsconfig.json",
 ])
-
-filegroup(
-    name = "node_modules",
-    srcs = glob([
-        "node_modules/typescript/**",
-        "node_modules/lite-server/**",
-        "node_modules/@types/**",
-        "node_modules/react/**",
-        "node_modules/react-dom/**",
-    ]),
-)

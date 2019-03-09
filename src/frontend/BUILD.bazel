@@ -1,6 +1,6 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@build_bazel_rules_typescript//:defs.bzl", "ts_library")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 ts_library(
     name = "src",
@@ -8,25 +8,30 @@ ts_library(
     tsconfig = "//:tsconfig.json",
     deps = [
        "//src/model",
-       "//src/frontend/friend:src"
+       "//src/frontend/friend:src",
+       "@npm//react",
+       "@npm//@types/react",
+       "@npm//react-dom",
+       "@npm//@types/react-dom",
     ]
 )
  
-load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
+load("@npm_bazel_typescript//:index.bzl", "ts_devserver")
 
 ts_devserver(
     name = "devserver",
     additional_root_paths = [
-        "react_samples/node_modules/react/umd",
-        "react_samples/node_modules/react-dom/umd",
+        "npm/node_modules/react/umd",
+        "npm/node_modules/react-dom/umd",
+        "react_samples/src/styles"
     ],
     port = 9999,
     serving_path = "/bundle.min.js",
-    #entry_module = "react_samples/src/frontend/main",
     deps = [":src"],
+    data = ["//src/styles"],
     static_files = [
         ":index.html",
-        "//:node_modules/react/umd/react.development.js",
-        "//:node_modules/react-dom/umd/react-dom.development.js"
+        "@npm//node_modules/react:umd/react.development.js",
+        "@npm//node_modules/react-dom:umd/react-dom.development.js"
     ],
 )

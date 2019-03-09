@@ -1,9 +1,9 @@
 Steps to run the sample:
 
-1) Install bazel
+Bazel is installed via npm, so a separate install is no longer needed.
 
-2) npm install
+It's not required to run yarn install since Bazel will do it for you. You may stil want to do it for editor integration though.
 
-3) npm run start
+1. yarn start
 
-4) Launch the app from http://localhost:9999
+2. Launch the app from http://localhost:9999
