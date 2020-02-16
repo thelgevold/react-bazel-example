@@ -1,4 +1,0 @@
-build --strategy=TypeScriptCompile=worker --remote_http_cache=http://localhost:9001/cache
-run --strategy=TypeScriptCompile=worker --remote_http_cache=http://localhost:9001/cache
-
-build --symlink_prefix=dist/

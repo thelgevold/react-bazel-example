@@ -1,6 +1,6 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@build_bazel_rules_typescript//:defs.bzl", "ts_library")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 ts_library(
     name = "src",
@@ -46,6 +46,6 @@ ts_library(
         "//src/frontend/module15/mod38/friends:src",
         "//src/frontend/module15/mod39/friends:src",
         "//src/frontend/module15/mod40/friends:src",
-        "//src/model"
+        "//src/model", "@npm//@types/react"
     ]
 )

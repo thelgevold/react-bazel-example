@@ -1,28 +1,30 @@
-FROM ubuntu:latest
-
-RUN apt-get update
-RUN apt-get -y install openjdk-8-jdk
-RUN apt-get -y install curl
-RUN apt-get -y install gnupg
-RUN apt-get -y install git
-RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list
-RUN curl https://bazel.build/bazel-release.pub.gpg | apt-key add -
-RUN apt-get update && apt-get -y install bazel
-RUN apt-get upgrade -y bazel
-
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
-RUN apt-get -y install nodejs
+FROM ubuntu:16.04
 
 WORKDIR /usr
 
-RUN mkdir tools
+RUN apt update
+
+RUN apt -y install gnupg
+RUN apt -y install git
+RUN apt -y install nano
+RUN apt -y install curl
+
+RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee tee /etc/apt/sources.list.d/bazel.list
+RUN curl https://bazel.build/bazel-release.pub.gpg | apt-key add -
+RUN apt update -y && apt install bazel-2.0.0 -y
+
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+
+RUN apt update && apt install nodejs -y
+
+RUN npm i
 
 COPY package.json /usr
 COPY WORKSPACE /usr
 COPY BUILD.bazel /usr
 COPY tsconfig.json /usr
-COPY tools/bazel.rc /usr/tools/bazel.rc
+COPY .bazelrc /usr
 
-RUN npm install
+WORKDIR /usr
 
 ENTRYPOINT [ ]

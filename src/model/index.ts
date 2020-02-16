@@ -1,1 +1,0 @@
-export {IFriend, IFriends} from 'react_samples/src/model/friend_ts_proto';

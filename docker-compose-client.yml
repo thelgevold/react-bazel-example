@@ -1,0 +1,15 @@
+version: "3.5"
+
+networks:
+  remote-build_remote-server:
+    external: true
+
+services:
+  remote_worker:
+    build: .
+    command: bash -c "/usr/bin/bazel-2.0.0 build //src/frontend:devserver"
+    container_name: client
+    volumes:
+      - ./src:/usr/src
+    networks:
+      remote-build_remote-server:

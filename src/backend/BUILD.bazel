@@ -1,0 +1,27 @@
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+
+ts_library(
+    name = "backend_ts",
+    srcs = ["server.ts"],
+    tsconfig = "//:tsconfig.json",
+    deps = [
+        "@npm//@types/node",
+        "@npm//express",
+    ]
+)
+
+filegroup(
+    name = "api_js",
+    srcs = ["backend_ts"],
+    output_group = "es5_sources",
+)
+
+nodejs_binary(
+    name = "backend",
+    data = [
+        ":backend_ts",
+         "@npm//express",
+    ],
+    entry_point = "api_js",
+)

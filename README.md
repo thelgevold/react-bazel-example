@@ -2,7 +2,7 @@ Steps to run the sample:
 
 1) Install docker
 
-2) npm install
+2) yarn install
 
 3) Terminal 1: npm run start-remote-cache
 

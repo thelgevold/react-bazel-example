@@ -1,0 +1,13 @@
+version: "3.5"
+
+networks:
+  remote-build_remote-server:
+    external: true
+
+services:
+  remote_worker:
+    build: .
+    command: bash -c "/usr/bin/bazel-2.0.0 run //src/main/java/build/buildfarm:buildfarm-operationqueue-worker /usr/bazel-buildfarm/examples/workers.config"
+    container_name: remote_worker
+    networks:
+      remote-build_remote-server:

@@ -1,0 +1,17 @@
+version: "3.5"
+
+networks:
+  remote-server:
+    driver: bridge
+
+services:
+  remote_server:
+    build: .
+    command: bash -c "/usr/bin/bazel-2.0.0 run //src/main/java/build/buildfarm:buildfarm-server /usr/bazel-buildfarm/examples/server.config"
+    container_name: remote_server
+    networks:
+      remote-server:
+         aliases:
+          - remote
+    ports:
+      - "8980:8980"

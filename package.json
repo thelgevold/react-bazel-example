@@ -4,23 +4,25 @@
     "react-dom": "16.4.1"
   },
   "devDependencies": {
-    "@bazel/ibazel": "0.4.0",
-    "@bazel/typescript": "0.16.0",
+    "@bazel/ibazel": "0.11.2",
+    "@bazel/typescript": "1.2.0",
     "@types/react": "16.4.1",
     "@types/react-dom": "16.0.6",
-    "typescript": "2.9.1",
-    "concurrently": "3.5.1"
+    "typescript": "3.6.4",
+    "concurrently": "3.5.1",
+    "@bazel/bazel": "2.0.0",
+    "express": "4.16.4"
   },
   "scripts": {
     "start-backend": "ibazel run //src/backend",
     "start-frontend": "ibazel run //src/frontend:devserver",
-    
     "build-backend": "bazel build //src/backend",
     "build-frontend": "bazel build //src/frontend:devserver",
-    
     "start": "npm run build-frontend && npm run build-backend && concurrently \"npm run start-frontend\" \"npm run start-backend\"",
-
-    "start-remote-cache": "docker-compose -f caching/docker-compose.yml up",
-    "stop-remote-cache": "docker-compose -f caching/docker-compose.yml down"
+    "start-remote-cache": "docker-compose -f caching/docker-compose.yml up -d",
+    "stop-remote-cache": "docker-compose -f caching/docker-compose.yml down",
+    "start-remote-server": "docker-compose -f remote-build/docker-compose-server.yml up",
+    "start-remote-worker": "docker-compose -f remote-build/docker-compose-worker.yml up",
+    "start-client": "docker-compose -f docker-compose-client.yml up"
   }
 }
