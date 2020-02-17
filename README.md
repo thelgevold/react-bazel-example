@@ -9,3 +9,5 @@ This sample builds a huge React app (8000+ files) with a small Node backend. The
 3) Terminal 2: npm run start-client
 
 4) Launch the app from http://localhost:9999
+
+Blog post: https://www.syntaxsuccess.com/viewarticle/scalable-react-build-with-bazel
