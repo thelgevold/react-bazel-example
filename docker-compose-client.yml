@@ -1,15 +1,29 @@
 version: "3.5"
 
 networks:
-  remote-build_remote-server:
+  caching_remote-cache:
     external: true
 
 services:
-  remote_worker:
+  react:
     build: .
-    command: bash -c "/usr/bin/bazel-2.0.0 build //src/frontend:devserver"
-    container_name: client
+    command: bash -c "npm run start-frontend"
+    ports:
+      - "9999:9999"  
+    container_name: react
     volumes:
       - ./src:/usr/src
     networks:
-      remote-build_remote-server:
+      caching_remote-cache:
+  api:
+    build: .
+    command: bash -c "npm run start-backend"
+    ports:
+      - "7001:7001"
+    container_name: api
+    volumes:
+      - ./src:/usr/src
+    networks:
+      caching_remote-cache:
+        aliases:
+          - api

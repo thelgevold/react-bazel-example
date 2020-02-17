@@ -1,3 +1,4 @@
 build --symlink_prefix=dist/
 
-build --spawn_strategy=remote --genrule_strategy=remote --strategy=Javac=remote --strategy=Closure=remote --remote_executor=grpc://remote:8980
+build --strategy=TypeScriptCompile=worker --remote_http_cache=http://remote:9001/cache
+run --strategy=TypeScriptCompile=worker --remote_http_cache=http://remote:9001/cache

@@ -14,12 +14,12 @@
     "express": "4.16.4"
   },
   "scripts": {
-    "start-backend": "ibazel run //src/backend",
-    "start-frontend": "ibazel run //src/frontend:devserver",
-    "build-backend": "bazel build //src/backend",
-    "build-frontend": "bazel build //src/frontend:devserver",
-    "start": "npm run build-frontend && npm run build-backend && concurrently \"npm run start-frontend\" \"npm run start-backend\"",
-    "start-remote-cache": "docker-compose -f caching/docker-compose.yml up -d",
+    "start-backend": "bazel run //src/backend",
+    "start-frontend": "bazel run //src/frontend:devserver",
+    "build-backend": "/usr/bin/bazel-2.0.0 build //src/backend",
+    "build-frontend": "/usr/bin/bazel-2.0.0 build //src/frontend:devserver",
+    "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
+    "start-remote-cache": "docker-compose -f caching/docker-compose.yml up",
     "stop-remote-cache": "docker-compose -f caching/docker-compose.yml down",
     "start-remote-server": "docker-compose -f remote-build/docker-compose-server.yml up",
     "start-remote-worker": "docker-compose -f remote-build/docker-compose-worker.yml up",
