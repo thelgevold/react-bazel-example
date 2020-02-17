@@ -1,6 +1,6 @@
 Steps to run the sample:
 
-This sample builds a huge React app (8000+ files) with a small Node backend.
+This sample builds a huge React app (8000+ files) with a small Node backend. The idea is to leverage a remote build cache to avoid rebuilds of the large project once it's built once.
 
 1) Install docker
 
