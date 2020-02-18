@@ -11,3 +11,5 @@ This sample builds a huge React app (8000+ files) with a small Node backend. The
 4) Launch the app from http://localhost:9999
 
 Blog post: https://www.syntaxsuccess.com/viewarticle/scalable-react-build-with-bazel
+
+Note: There is currently no prod bundling step in this branch. It could be added through a Rollup or Weback rule though.
