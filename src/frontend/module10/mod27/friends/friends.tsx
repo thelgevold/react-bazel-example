@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 import { FriendComponent1 } from './friend1/friend';
 import { FriendComponent2 } from './friend2/friend';
 import { FriendComponent3 } from './friend3/friend';

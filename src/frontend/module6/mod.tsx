@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 
 import { FriendsList1Component } from './mod1/friends/friends';
 import { FriendsList2Component } from './mod2/friends/friends';

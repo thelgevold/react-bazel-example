@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-      "jsx": "react",
-      "lib": [
-          "dom",
-          "es5", 
-          "es2015"
-      ],
-      "experimentalDecorators": true
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es5",
+      "es2015"
+    ],
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
   }
 }

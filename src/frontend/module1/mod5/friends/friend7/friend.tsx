@@ -1,5 +1,5 @@
-import {IFriend} from '../../../../../model';
-import * as React from 'react';
+import { IFriend } from '../../../../../model';
+import React from "react";
 
 export class FriendComponent7 extends React.Component<IFriend, IFriend> {
 

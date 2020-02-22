@@ -1,6 +1,8 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@npm_bazel_typescript//:index.bzl", "ts_library", "ts_devserver")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+load("@npm_bazel_rollup//:index.bzl", "rollup_bundle")
+load("@npm_bazel_terser//:index.bzl", "terser_minified")
 
 ts_library(
     name = "src",
@@ -27,27 +29,32 @@ ts_library(
        "//src/frontend/module4:src",
        "//src/frontend/module3:src",
        "//src/frontend/module2:src",
-       "//src/frontend/module1:src",
+        "//src/frontend/module1:src",
        "@npm//@types/react",
        "@npm//react",
        "@npm//react-dom"
        
     ]
 )
- 
-ts_devserver(
-    name = "devserver",
-    additional_root_paths = [
-        "react_samples/node_modules/react/umd",
-        "react_samples/node_modules/react-dom/umd",
-    ],
-    port = 9999,
-    serving_path = "/bundle.min.js",
-    #entry_module = "react_samples/src/frontend/main",
-    deps = [":src"],
-    static_files = [
-        ":index.html",
-        "//:node_modules/react/umd/react.development.js",
-        "//:node_modules/react-dom/umd/react-dom.development.js"
+
+rollup_bundle(
+    name = "bundle-es2015",
+    entry_points = {":main.ts": "index"},
+    config_file = "rollup.config.js",
+    deps = [
+        ":src",
+        "@npm//rollup-plugin-commonjs",
+        "@npm//rollup-plugin-node-resolve",
+        "@npm//@types/react",
+        "@npm//@types/react-dom",
+        "@npm//react",
+        "@npm//react-dom",
+        "@npm//rollup-plugin-replace"
     ],
 )
+
+terser_minified(
+    name = "bundle-es2015.min",
+    src = ":bundle-es2015",
+)
+ 

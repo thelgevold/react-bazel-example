@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { ModComponent1Component } from './module1/mod';
 import { ModComponent2Component } from './module2/mod';

@@ -5,16 +5,6 @@ networks:
     external: true
 
 services:
-  react:
-    build: .
-    command: bash -c "npm run start-frontend"
-    ports:
-      - "9999:9999"  
-    container_name: react
-    volumes:
-      - ./src:/usr/src
-    networks:
-      caching_remote-cache:
   api:
     build: .
     command: bash -c "npm run start-backend"

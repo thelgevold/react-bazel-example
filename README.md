@@ -6,4 +6,4 @@ Steps to run the sample:
 
 3) Terminal 2: npm run start-client
 
-4) Launch the app from http://localhost:9999
+4) Launch the app from http://localhost:7001

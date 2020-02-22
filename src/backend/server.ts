@@ -2,11 +2,10 @@ import * as express from "express";
 
 const app = express();
 
+app.use('/bundle', express.static(__dirname + '/prodapp/src/frontend'));
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+app.get('/', (_req, res) => {
+  res.sendFile('index.html', { root: __dirname });
 });
 
 app.get("/friends", (_req, res) => {

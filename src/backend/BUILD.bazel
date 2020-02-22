@@ -1,5 +1,5 @@
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
-load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
+load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary", "pkg_web")
 
 ts_library(
     name = "backend_ts",
@@ -7,7 +7,7 @@ ts_library(
     tsconfig = "//:tsconfig.json",
     deps = [
         "@npm//@types/node",
-        "@npm//express",
+        "@npm//express"
     ]
 )
 
@@ -17,11 +17,23 @@ filegroup(
     output_group = "es5_sources",
 )
 
+pkg_web(
+    name = "prodapp",
+    srcs = [
+        "//src/frontend:bundle-es2015.min"
+    ]
+)
+
 nodejs_binary(
     name = "backend",
     data = [
         ":backend_ts",
          "@npm//express",
+         ":prodapp",
+         "@npm//@types/react",
+         "@npm//react",
+         "@npm//react-dom",
+         ":index.html"
     ],
     entry_point = "api_js",
 )
