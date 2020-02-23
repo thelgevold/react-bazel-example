@@ -7,7 +7,8 @@ ts_library(
     tsconfig = "//:tsconfig.json",
     deps = [
         "@npm//@types/node",
-        "@npm//express"
+        "@npm//express",
+        "@npm//compression"
     ]
 )
 
@@ -29,6 +30,7 @@ nodejs_binary(
     data = [
         ":backend_ts",
          "@npm//express",
+         "@npm//compression",
          ":prodapp",
          "@npm//@types/react",
          "@npm//react",

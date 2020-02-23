@@ -1,6 +1,9 @@
 import * as express from "express";
+import * as compression from "compression";
 
 const app = express();
+
+app.use(compression());
 
 app.use('/bundle', express.static(__dirname + '/prodapp/src/frontend'));
 
