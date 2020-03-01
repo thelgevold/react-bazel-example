@@ -8,4 +8,4 @@ Steps to run the sample:
 
 4) Launch the app from http://localhost:7001
 
-Blog post: https://www.syntaxsuccess.com/viewarticle/scalable-react-build-with-bazel
+Blog post: https://www.syntaxsuccess.com/viewarticle/large-react-production-bazel-build
